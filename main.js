@@ -1,4 +1,8 @@
-"use strict"
+"use strict";
+
+(function(){
+
+
 
 function renderCoffee(coffee) {
     var html = '<tr class="coffee">';
@@ -55,3 +59,7 @@ var roastSelection = document.querySelector('#roast-selection');
 tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
+
+
+
+})();
