@@ -23,7 +23,8 @@
         </select>
         <br>
         <h5><strong>Coffee Name</strong></h5>
-        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+        <input class="form-control" type="text" placeholder="" onkeyup="showResult(this.value)" aria-label="Search">
+        <div id="livesearch"></div>
         <br>
         <input id="submit" class="btn btn-primary btn-lg btn-block" type="submit" value="Submit" />
     </form>
