@@ -1,17 +1,29 @@
-table {
-    border-collapse: collapse;
-    margin: 15px 0;
+h1 {
+    font-family: 'Pacifico', cursive;
+    margin: 50px;
+    font-size: 48px ;
 }
 
-td, th {
-    border: 1px solid black;
-    padding: 5px 10px;
+
+body{
+    font-family: 'Baloo 2', cursive;
+    background-color: black;
+    color: ghostwhite;
+    background-image: url("brown-coffee-beans-1323730.jpg");
+    background-position: center;
+    background-size: cover;
 }
 
-/*horizontal line backup
-/*hr {*/
-/*    margin-top: 1rem;*/
-/*    margin-bottom: 4rem;*/
-/*    border: 0;*/
-/*    border-top: 1px solid rgba(0, 0, 0, 0.1);*/
+
+
+
+
+/*#horz-rule {*/
+/*    margin: 0;*/
 /*}*/
+
+
+
+
+
+
