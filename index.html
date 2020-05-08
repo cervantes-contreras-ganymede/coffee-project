@@ -16,34 +16,42 @@
         <h5><strong>Roast</strong></h5>
         <label for="roast-selection"></label>
         <select id="roast-selection" class="form-control" >
-            <option>All</option>
             <option>light</option>
             <option>medium</option>
             <option>dark</option>
         </select>
         <br>
         <h5><strong>Coffee Name</strong></h5>
-        <input class="form-control" type="text" placeholder="" onkeyup="showResult(this.value)" aria-label="Search">
-        <div id="livesearch"></div>
+        <input class="form-control" id="coffee-name-search" type="text" placeholder="" aria-label="Search">
         <br>
-        <input id="submit" class="btn btn-primary btn-lg btn-block" type="submit" value="Submit" />
+<!--        <input id="submit" class="btn btn-primary btn-lg btn-block" type="submit" value="Submit" />-->
     </form>
+    </div>
+    <div id="coffees">
     </div>
 
 
 
+<!--2nd form -->
+    <h1 class="text-center">Add a Coffee</h1>
+    <form>
+        <h5><strong>Roast</strong></h5>
+        <label for="add-roast-selection"></label>
+        <select id="add-roast-selection" class="form-control" >
+            <option>light</option>
+            <option>medium</option>
+            <option>dark</option>
+        </select>
+        <br>
+        <h5><strong>Name</strong></h5>
+        <input class="form-control" id="coffee-name-search" type="text" placeholder="" aria-label="Search">
+        <br>
+        <input id="submit" class="btn btn-primary btn-lg btn-block" type="submit" value="Submit" />
+    </form>
 
 
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>NAME</th>
-                <th>ROAST</th>
-            </tr>
-        </thead>
-        <tbody id="coffees"></tbody>
-    </table>
+
+
 
     <script src="main.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

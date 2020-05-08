@@ -7,11 +7,11 @@
 
 
 function renderCoffee(coffee) {
-    let html = '<tr class="coffee">';
-    html += '<td>' + coffee.id + '</td>';
-    html += '<td>' + coffee.name + '</td>';
-    html += '<td>' + coffee.roast + '</td>';
-    html += '</tr>';
+    let html = '<div class="coffee">';
+    // html += '<h3>' + coffee.id + '</h3>';
+    html += '<h3>' + coffee.name + '</h3>';
+    html += '<p>' + coffee.roast + '</p>';
+    html += '</div>';
 
     return html;
 }
@@ -56,12 +56,38 @@ let coffees = [
 
 
 let tbody = document.querySelector('#coffees');
-let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
+let coffeeNameSearch = document.querySelector('#coffee-name-search');
+// let submitButton = document.querySelector('#submit');
+
 
 tbody.innerHTML = renderCoffees(coffees);
 
-submitButton.addEventListener('click', updateCoffees);
+// submitButton.addEventListener('click', addNewCoffees);
+
+roastSelection.addEventListener('change',updateCoffees);
+coffeeNameSearch.addEventListener('keyup', updateCoffeesByName);
+
+
+    function updateCoffeesByName(e) {
+        e.preventDefault(); // don't submit the form, we just want to update the data
+        let inputCoffee = coffeeNameSearch.value;
+        let filteredCoffees = [];
+        coffees.forEach(function(coffee) {
+            if (coffee.name.toLowerCase().includes(inputCoffee.toLowerCase())) {
+                filteredCoffees.push(coffee);
+            }
+        });
+        tbody.innerHTML = renderCoffees(filteredCoffees);
+    }
+
+
+    function addNewCoffees (){
+
+    }
+
+
+
 
 
 
