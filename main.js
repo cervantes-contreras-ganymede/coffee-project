@@ -2,6 +2,10 @@
 
 (function(){
 
+
+
+
+//html div class d-flex j-c-b to have listed coffees on the left and roasts on the right
     function renderCoffee(coffee) {
         let html = '<div class="d-flex justify-content-between">';
         html += '<h3>' + coffee.name + '</h3>';
@@ -52,27 +56,33 @@
 
     let tbody = document.querySelector('#coffees');
     let roastSelection = document.querySelector('#roast-selection');
+    //added for updateCoffeesByName function targeting #coffee-name-search in the html
     let coffeeNameSearch = document.querySelector('#coffee-name-search');
     let submitButton = document.querySelector('#submit');
 
 
 
+    //added for addNewCoffee function targeting #add-roast-selection and add-coffee-name in html
     let addRoast = document.querySelector('#add-roast-selection');
     let addName = document.querySelector('#add-coffee-name');
 
-
+    // updated rendered coffees to show in reverse order
     tbody.innerHTML = renderCoffees(coffees.reverse());
 
+    // added EventListener addNewCoffee with its function to show added coffee
     submitButton.addEventListener('click', addNewCoffee);
 
+    //AddEventListener updated to change when drop down selection is changed instead of click
     roastSelection.addEventListener('change',updateCoffees);
+    // AddEventListen on keyup to change with key entries match coffees by name
     coffeeNameSearch.addEventListener('keyup', updateCoffeesByName);
 
 
+    //e.preventDefault() method tells the user agent that if the event does not get explicitly
+    // handled, its default action should not be taken as it normally would be
 
-
-
-//function to search coffees by typing in name in search bar
+    //copied the update coffees function that filters through the roasts
+    //update coffees by name function filters the coffees by name with the quaryselector
     function updateCoffeesByName(e) {
         e.preventDefault(); // don't submit the form, we just want to update the data
         let inputCoffee = coffeeNameSearch.value;
@@ -84,7 +94,9 @@
         });
         tbody.innerHTML = renderCoffees(filteredCoffees.reverse());
     }
-//JS to add coffee by name on
+
+
+    // addNewCoffee function to add a new coffee name (also copied from update coffees)
     function addNewCoffee(e){
         e.preventDefault();
         let newCoffee = {};
