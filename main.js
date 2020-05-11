@@ -2,10 +2,6 @@
 
 (function(){
 
-
-
-
-
     function renderCoffee(coffee) {
         let html = '<div class="d-flex justify-content-between">';
         html += '<h3>' + coffee.name + '</h3>';
@@ -59,6 +55,8 @@
     let coffeeNameSearch = document.querySelector('#coffee-name-search');
     let submitButton = document.querySelector('#submit');
 
+
+
     let addRoast = document.querySelector('#add-roast-selection');
     let addName = document.querySelector('#add-coffee-name');
 
@@ -71,6 +69,10 @@
     coffeeNameSearch.addEventListener('keyup', updateCoffeesByName);
 
 
+
+
+
+//function to search coffees by typing in name in search bar
     function updateCoffeesByName(e) {
         e.preventDefault(); // don't submit the form, we just want to update the data
         let inputCoffee = coffeeNameSearch.value;
@@ -82,7 +84,7 @@
         });
         tbody.innerHTML = renderCoffees(filteredCoffees.reverse());
     }
-
+//JS to add coffee by name on
     function addNewCoffee(e){
         e.preventDefault();
         let newCoffee = {};
@@ -94,8 +96,5 @@
     }
 
 
-
-
-
-
 })();
+
